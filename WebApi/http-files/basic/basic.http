@@ -1,0 +1,7 @@
+﻿
+### HEALTH CHECK
+// @no-log
+GET http://localhost:5182/api/v1/Example/ping
+Accept: text/plain
+
+###

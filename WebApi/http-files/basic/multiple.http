@@ -1,0 +1,21 @@
+﻿
+### HEALTH CHECK
+# Invokes health check endpoint in the platform Asset Service
+// @no-log
+GET http://localhost:5182/api/v1/Example/ping
+Accept: text/plain
+
+### CREATE
+// @no-log
+POST http://localhost:5182/api/v1/Example/output
+Content-Type: application/json
+
+{
+    "name": "SomeName"
+}
+
+### GET ALL
+# Invokes health check endpoint in the platform Asset Service
+// @no-log
+GET http://localhost:5182/api/v1/Example/output
+Accept: text/plain

@@ -1,0 +1,10 @@
+﻿### CREATE
+// @no-log
+POST {{Host}}/api/v1/Example/output
+Content-Type: application/json
+
+{
+  "name": "{{Name}}"
+}
+
+###

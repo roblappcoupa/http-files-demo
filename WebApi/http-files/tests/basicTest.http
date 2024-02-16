@@ -1,0 +1,32 @@
+﻿
+
+### CREATE
+// @no-log
+POST http://localhost:5182/api/v1/Example/output
+Content-Type: application/json
+
+{
+  "name": "SomeName 2"
+}
+
+> {%
+    client.test("Request executed successfully", function() {
+        client.assert(response.status === 201, "Response status is not 201 Created");
+    });
+
+    client.test("Server response header is Kestrel", function() {
+        client.assert(response.headers.valueOf("Server") === "Kestrel", "Response did not use 'Server: Kestrel' in response headers");
+    });
+
+    client.test("Response content-type is json", function() {
+        const type = response.contentType.mimeType;
+        client.assert(type === "application/json", "Expected 'application/json' but received '" + type + "'");
+    });
+
+    client.test("Response content-type is json", function() {
+        const location = response.headers.valueOf("Location");
+        client.assert(location.startsWith("http://localhost:5182/api/v1/Example/output/"), "Unexpected Location header '" + location + "'");
+    });
+%}
+
+###

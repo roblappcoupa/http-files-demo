@@ -1,0 +1,36 @@
+﻿
+### CREATE
+// @no-log
+POST http://localhost:5182/api/v1/Example/output
+Content-Type: application/json
+
+{
+  "name": "SomeName"
+}
+
+> {%
+    let id = response.body.id;
+
+    console.log("The generated id is:");
+    console.log(id);
+
+    client.global.set("id", id);
+%}
+
+###
+
+### GET
+// @no-log
+
+< {%
+    import { beforeRequest } from './my-script'
+
+    beforeRequest();
+%}
+GET http://localhost:5182/api/v1/Example/output/{{id}}
+
+> {%
+    import { afterRequest } from './my-script'
+
+    afterRequest();
+%}

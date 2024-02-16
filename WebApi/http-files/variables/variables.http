@@ -1,0 +1,20 @@
+﻿@Host = http://localhost:5182
+@Name = Name Set From Variable
+
+### CREATE
+// @no-log
+POST {{Host}}/api/v1/Example/output
+Content-Type: application/json
+
+{
+  "name": "{{Name}}"
+}
+
+### CREATE WITH RANDOM DATA
+// @no-log
+POST {{Host}}/api/v1/Example/output
+Content-Type: application/json
+
+{
+  "name": "{{$uuid}}"
+}

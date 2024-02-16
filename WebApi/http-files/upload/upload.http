@@ -1,0 +1,9 @@
+
+POST http://localhost:5182/api/v1/Example/upload?n=50 HTTP/1.1
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="formFile"; filename="SomeTestFile.txt"
+
+// The 'SomeTestFile.txt' file will be uploaded
+< ./SomeTestFile.txt

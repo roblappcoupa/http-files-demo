@@ -1,0 +1,19 @@
+﻿
+# curl --location 'https://dev.llama.ai/api/authentication/connect/token' 
+#--header 'Content-Type: application/x-www-form-urlencoded' 
+#--data-urlencode 'client_id=8c107649-2c17-4eeb-9f20-bc5a17c66ccb' 
+#--data-urlencode 'client_secret=0490116b-f224-4b46-b897-e95fcefb47c1' 
+#--data-urlencode 'grant_type=impersonation' 
+#--data-urlencode 'scope=openid profile llamasoft_platform scg_ws_api' 
+#--data-urlencode 'impersonate_user=robert.lapp@coupa.com'
+POST https://dev.llama.ai/api/authentication/connect/token
+Content-Type: application/x-www-form-urlencoded
+
+client_id = 8c107649-2c17-4eeb-9f20-bc5a17c66ccb &
+client_secret = 0490116b-f224-4b46-b897-e95fcefb47c1 &
+grant_type = impersonation &
+scope = openid+profile+llamasoft_platform+scg_ws_api &
+impersonate_user = robert.lapp%40coupa.com
+
+###
+
